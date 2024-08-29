@@ -1,0 +1,14 @@
+# 베이스 이미지를 ubuntu:latest로 지정
+FROM ubuntu:latest
+LABEL maintainer="jason <a01071865081@gmail.com>"
+LABEL version="1.0"
+# 베이스 이미지로 만들어진 컨테이너에서 실행할 명령어
+RUN apt-get update
+RUN apt-get -y install sudo
+RUN sudo apt-get install net-tools 
+# ENTRYPOINT ["/bin/sh", "-c", "ifconfig"]
+# 컨테이너 실행 시 먼저 실행될 명렁을 지정
+# CMD ifconfig
+# CMD ["/bin/sh", "-c", "ifconfig"]
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["ifconfig"]

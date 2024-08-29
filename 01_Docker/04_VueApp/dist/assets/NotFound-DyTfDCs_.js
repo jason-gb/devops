@@ -1,0 +1,1 @@
+import{u as o,c as a,a as t,t as n,h as s,o as u}from"./index-Db6Y44QE.js";const r=t("h2",null,"404 Not Found",-1),d={__name:"NotFound",setup(c){const e=o();return(l,_)=>(u(),a("div",null,[r,t("p",null," 존재하지 않는 경로 : "+n(s(e).fullPath),1)]))}};export{d as default};

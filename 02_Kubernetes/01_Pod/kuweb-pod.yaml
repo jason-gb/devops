@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuweb-pod
+  # namespace: kube-test
+  # labels:
+  #   app: kuweb-label
+spec: 
+  containers:
+  - name: kuweb
+    image: test-web:1.0
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+  - name: ubuntu-linux
+    image: ubuntu:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command:
+    - cat
+    tty: true

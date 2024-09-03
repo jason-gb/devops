@@ -4,4 +4,4 @@ RUN mkdir ./ROOT
 COPY index.jsp ./ROOT
 ENV TZ=Asia/Seoul
 EXPOSE 8080
-CMD [ "catalina.sh", "run" ]
+CMD ["catalina.sh", "run"]

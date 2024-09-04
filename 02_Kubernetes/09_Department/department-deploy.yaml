@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: department-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: department-label
+  template: 
+    metadata:
+      labels:
+        app: department-label
+    spec: 
+      containers:
+      - name: department
+        image: department-service:3.1 
+        resources: 
+          requests: 
+            memory: "128Mi"
+            cpu: "500m"
+          limits: 
+            memory: "256Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 8088

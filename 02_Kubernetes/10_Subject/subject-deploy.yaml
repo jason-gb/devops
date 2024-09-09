@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: department-deploy
+  name: subject-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: department-label
+      app: subject-label
   template: 
     metadata:
       labels:
-        app: department-label
+        app: subject-label
     spec: 
       containers:
-      - name: department
-        image: department-service:3.3 
+      - name: subject
+        image: subject-service:3.1 
         resources: 
           requests: 
             memory: "128Mi"
@@ -23,4 +23,4 @@ spec:
             memory: "256Mi"
             cpu: "1000m"
         ports:
-        - containerPort: 8088
+        - containerPort: 8089

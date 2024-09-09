@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-front-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: final-front-label
+  template:
+    metadata:
+      labels:
+        app: final-front-label
+    spec:
+      containers:
+      - name: final-front
+        image: final-front:5.0
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
